@@ -13,7 +13,6 @@ export function showError() {
     'Something went wrong! Try reloading the page!',
     'Reload',
     () => {
-      console.log('cargar de nuevo');
       location.reload();
     }
   );
@@ -29,7 +28,6 @@ export function fetchCatByBreed(breedId) {
       return response.json();
     })
     .then(data => {
-      console.log(data, 'sasdsad');
       const { id } = data[0];
       fetch(`https://api.thecatapi.com/v1/images/${id}`)
         .then(response => {

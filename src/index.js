@@ -18,7 +18,6 @@ fetch('https://api.thecatapi.com/v1/breeds')
     return response.json();
   })
   .then(data => {
-    console.log(data);
     data.forEach(({ id, name }) => {
       addToOptionsList(id, name);
     });
@@ -28,7 +27,7 @@ fetch('https://api.thecatapi.com/v1/breeds')
     select.classList.toggle('hidden');
   })
   .catch(error => {
-    console.log(`Ocurrio un error: ${error}`);
+    console.log(`Ocurrió un error: ${error}`);
     showError();
   })
   .finally(() => {
@@ -36,6 +35,5 @@ fetch('https://api.thecatapi.com/v1/breeds')
   });
 
 select.addEventListener('change', async () => {
-  console.log(select.value);
   fetchCatByBreed(select.value);
 });
